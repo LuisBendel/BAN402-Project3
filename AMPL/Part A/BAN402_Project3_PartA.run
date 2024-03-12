@@ -1,0 +1,19 @@
+reset;
+model BAN402_Project3_PartA.mod;
+data BAN402_Project3_PartA.dat;
+
+option solver minos;
+
+solve;
+
+display gamma;
+display beta;
+display F;
+display L;
+display Tr;
+
+param Error{T};
+
+let {t in T} Error[t]:= (F[t] - D[t]) / D[t];
+
+display Error;
